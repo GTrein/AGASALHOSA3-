@@ -2,11 +2,10 @@
 
 Item::Item() {};
 
-Item::Item(string tipo, string descricao, string cor)
+Item::Item(string tipo, string descricao)
 {
 	this->tipo = tipo;
 	this->descricao = descricao;
-	this->cor = cor;
 
 }
 
@@ -18,10 +17,7 @@ void Item::setDescricao(string descricao)
 {
 	this->descricao = descricao;
 }
-void Item::setCor(string cor)
-{
-	this->cor = cor;
-}
+
 
 string Item::getTipo()
 {
@@ -31,7 +27,4 @@ string Item::getDescricao()
 {
 	return descricao;
 }
-string Item::getCor()
-{
-	return cor;
-}
+

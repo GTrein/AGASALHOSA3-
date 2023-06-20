@@ -11,18 +11,15 @@ class Item
 {
 public:
 	Item();
-	Item(string tipo, string descricao, string cor);
+	Item(string tipo, string descricao);
 	void setTipo(string tipo);
 	void setDescricao(string descricao);
-	void setCor(string cor);
 	string getTipo();
 	string getDescricao();
-	string getCor();
 
 private:
 	string tipo;
 	string descricao;
-	string cor;
 
 
 };

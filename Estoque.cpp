@@ -1,4 +1,5 @@
 #include "Estoque.h"
+#include <string>
 using namespace std;
 
 
@@ -15,7 +16,6 @@ void Estoque::ListarItens()//função para listar os itens
 		cout << i + 1 << "-" << endl;
 		cout << itens[i].getTipo() << endl;
 		cout << itens[i].getDescricao() << endl;
-		cout << itens[i].getCor() << endl;
 		cout << "===============\n";
 	}
 
@@ -28,15 +28,14 @@ void Estoque::DoarItens()//função para adicionar itens ao vetor
 	string tipo, tamanho, cor;
 
 	cout << "O que você vai doar?\n";
-	cout << "Use só uma palavra Ex:Tênis, Moletom, Cobertor.\n";
-	cin >> tipo;
-	cout << "Qual o tamanho do item?\n";
-	cout << "Use só uma palavra Ex:P, GG, 42.\n";
-	cin >> tamanho;
-	cout << "Qual a cor do item?\n";
-	cout << "Use só uma palavra Ex:Azul, Verde, Preto.\n";
-	cin >> cor;
-	Item ItemTemp(tipo, tamanho, cor);
+	getline(cin, tipo);
+	cin.ignore();
+	cout << "Descreva brevemente o item.\n";
+	cout << "Por exemplo: Nike air branco.\n";
+	getline(cin, tamanho);
+	cin.ignore();
+	
+	Item ItemTemp(tipo, tamanho);
 	itens.push_back(ItemTemp);
 }
 void Estoque::ReceberDoacao()//função para escolher e remover itens do vetor
@@ -53,7 +52,6 @@ void Estoque::ReceberDoacao()//função para escolher e remover itens do vetor
 		cout << i + 1 << "-" << endl;
 		cout << itens[i].getTipo() << endl;
 		cout << itens[i].getDescricao() << endl;
-		cout << itens[i].getCor() << endl;
 		cout << "===============\n";
 	}
 	cout << "Escolha um item para receber: ";
@@ -65,10 +63,8 @@ void Estoque::ReceberDoacao()//função para escolher e remover itens do vetor
 		return;
 	}
 	
-	cout << escolha << "-" << endl;
 	cout << itens[escolha-1].getTipo() << endl;
 	cout << itens[escolha-1].getDescricao() << endl;
-	cout << itens[escolha-1].getCor() << endl;
 	cout << "O item escolhido foi reservado com sucesso!\n";
 	cout << "As informações de retirada serão encaminhadas por email.\n";
 
@@ -80,15 +76,15 @@ void Estoque::ReceberDoacao()//função para escolher e remover itens do vetor
 void Estoque::Exemplo2()//função para adicionar 3 itens de exemplo a lista toda vez que o programa for inciado
 {
 
-	string tipo, descricao, cor;
+	string tipo, descricao;
 
-	Item ItemTemp1("Tênis", "42", "Vermelho");
+	Item ItemTemp1("Tênis", "Tênis de corrida vermelho tamanho 42");
 	itens.push_back(ItemTemp1);
 
-	Item ItemTemp2("Casaco", "PP", "Preto");
+	Item ItemTemp2("Camiseta", "Regata branca tamanho M");
 	itens.push_back(ItemTemp2);
 
-	Item ItemTemp3("Moletom", "M", "Azul");
+	Item ItemTemp3("Moletom", "Moletom preto com capuz tamanho PP");
 	itens.push_back(ItemTemp3);
 
 

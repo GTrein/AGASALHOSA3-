@@ -13,10 +13,10 @@ void App::Exemplo()
 	
 		string username, email, senha;
 
-		Usuario usuarioTemp1("Gabriel", "gabriel@gmail.com", "0000");
+		Usuario usuarioTemp1("Gabriel Trein", "gabriel@gmail.com", "0000");
 		usuarios.push_back(usuarioTemp1);
 
-		Usuario usuarioTemp2("Ana","ana@gmail.com", "1234");
+		Usuario usuarioTemp2("Ana Sofia","ana@gmail.com", "1234");
 		usuarios.push_back(usuarioTemp2);
 
 		Usuario usuarioTemp3("Wellington", "well@gmail.com", "senha");
@@ -55,7 +55,6 @@ void App::Executar()
 			break;
 		case 2:
 			Login();
-			
 			break;
 		case 3:
 			cout << "Programa Encerrado.\n";
@@ -156,7 +155,7 @@ int App::MenuJaLogado(int PosicaoUsuario)
 	cout << "Bem vindo(a) " << usuarios[PosicaoUsuario].getNome() << "!\n\n";
 	cout << "==== Menu Principal ====\n";
 	cout << "1 - Ver Estoque\n";
-	cout << "2 - Doar\n";*-*
+	cout << "2 - Doar\n";
 	cout << "3 - Rececber doação\n";
 	cout << "4 - Sair da conta\n";
 
