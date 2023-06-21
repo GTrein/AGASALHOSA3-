@@ -51,7 +51,6 @@ void App::Executar()
 		{
 		case 1:
 			CriarConta();
-			
 			break;
 		case 2:
 			Login();
@@ -193,6 +192,8 @@ void App::ExecutarMenuPrincipal(int PosicaoUsuario)
 		default:
 			cout << "Escolha Inválida.\n";
 			Sleep(1500);
+
+			
 		}
 
 	} while (escolha != 4);

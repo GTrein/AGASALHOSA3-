@@ -28,11 +28,15 @@ void Estoque::DoarItens()//função para adicionar itens ao vetor
 	string tipo, tamanho, cor;
 
 	cout << "O que você vai doar?\n";
+	cin.ignore(); 
 	getline(cin, tipo);
-	cin.ignore();
+	
 	cout << "Descreva brevemente o item.\n";
 	cout << "Por exemplo: Nike air branco.\n";
+	
 	getline(cin, tamanho);
+
+
 	cin.ignore();
 	
 	Item ItemTemp(tipo, tamanho);
